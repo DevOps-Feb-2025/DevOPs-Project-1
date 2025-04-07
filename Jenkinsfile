@@ -1,8 +1,8 @@
-
 pipeline {
     agent any
     environment {
         DOCKER_IMAGE = 'yourdockerhubusername/software-training-app:latest'
+	tools = 'maven'
     }
     stages {
         stage('Checkout') {
