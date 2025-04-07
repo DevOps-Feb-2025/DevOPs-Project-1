@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/yourusername/software-training-app.git'
+                git 'https://github.com/DevOps-Feb-2025/DevOPs-Project-1.git'
             }
         }
         stage('Build') {
