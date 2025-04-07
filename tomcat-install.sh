@@ -3,7 +3,7 @@
 # Exit on any error
 set -e
 
-# Step 1: Set the hostname
+# Step 1: Set the hostname in your linux machine , to set permanently
 echo "Setting hostname to 'tomcatwebserver'..."
 hostnamectl set-hostname tomcatwebserver
 
