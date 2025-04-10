@@ -1,0 +1,67 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the project from GitHub
+                git branch: 'main', url: 'https://github.com/Cloud-Gen-DevOps-Projects/Jenkins-Docker-Integration.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Build the Docker image
+                sh 'mvn clean package'
+                sh 'docker build -t cloud-gen-softech-system .'
+            }
+        }
+
+        stage('Trivy Image Scan') {
+            steps {
+                // Scan the Docker image with Trivy
+                script {
+                    // Make sure Trivy is installed in your Jenkins environment
+                    sh 'trivy image --exit-code 0 --severity HIGH,CRITICAL cloud-gen-softech-system'
+                }
+            }
+        }
+
+        stage('Docker Login') {
+            steps {
+                script {
+                    // Login to Docker Hub
+                    withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                        sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
+                    }
+                }
+            }
+        }
+
+        stage('Docker Tag') {
+            steps {
+                // Tag the Docker image for pushing to Docker Hub
+                script {
+                    sh 'docker tag cloud-gen-softech-system thanis/cloud-gen-softech-system:latest'
+                }
+            }
+        }
+
+        stage('Docker Push') {
+            steps {
+                // Push the tagged Docker image to Docker Hub
+                script {
+                    sh 'docker push thanis/cloud-gen-softech-system:latest'
+                }
+            }
+        }
+
+        stage('Docker Run') {
+            steps {
+                // Run the Docker container
+                sh 'docker run -d -p 8080:8080 thanis/cloud-gen-softech-system:latest'
+            }
+        }
+    }
+}
+
