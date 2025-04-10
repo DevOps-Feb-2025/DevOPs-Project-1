@@ -23,6 +23,14 @@ git show
 git log 
 git log branch name
 git logt file-name
-git [A[C[C[C[3~[F[B[B[C[C[C reset --hard HEAD~
+git reset --hard HEAD~
 git branch
 git branch branchame
+git branch -d branch-name
+git branch - old-branch new-branch-name
+git checkout branch-name
+git checkout -b new-branch-name
+git push origin main
+git push origin future-branch-name
+git push origin --all
+git 
