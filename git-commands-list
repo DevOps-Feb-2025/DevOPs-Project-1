@@ -33,4 +33,9 @@ git checkout -b new-branch-name
 git push origin main
 git push origin future-branch-name
 git push origin --all
+git commit --amend --no-edit
+git commit -am "message"
+git add -u
+git diff file-name
+git diff branch-name 
 git 
