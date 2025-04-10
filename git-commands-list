@@ -1,0 +1,28 @@
+git --version
+git clone remote-repo-url
+git status
+git add file-name
+git add file-name file-name
+git commit -m "message" file-name
+git commit -m "messag" File-Name File-Name
+git commit -m "any one Message"
+git reset
+git reset .
+git reset *
+git reset file-name 
+git reset file-name file-name
+git stage file-name 
+git stage file_name file_name
+git stage .
+git stage --all
+git stage *
+git stage -A
+git reset --soft HEAD~
+git reset @~
+git show
+git log 
+git log branch name
+git logt file-name
+git [A[C[C[C[3~[F[B[B[C[C[C reset --hard HEAD~
+git branch
+git branch branchame
