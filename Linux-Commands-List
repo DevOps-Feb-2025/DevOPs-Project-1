@@ -53,4 +53,15 @@ rpm -qi httpd
 rpm -q httpd
 rpm -q git
 rip -qi git
+du -sh /path/to-dir
+iotop
+iftop
+nload
+netstat -tulnp
+ss -tulwn
+ping / traceroute /mtr
+mpstart
+ps aux
+
+
 
