@@ -1,0 +1,41 @@
+ip a
+ip addr
+ip address
+ifconfig
+ls
+ll
+ls -l
+ls -la
+ll -a
+ll -O
+ll -R
+pwd
+uptime
+date
+cal
+uname -a
+uname -r
+who
+whoami
+who am i
+users
+cat /etc/passwd
+cat /etc/shadow
+cat /etc/shells
+runlevel
+last
+free -h
+free -m
+free -k
+free -g
+free -b
+fdisk -l
+df -u
+df -h
+lscpu
+htop
+top
+iostat
+netstat
+vmstat
+sar
